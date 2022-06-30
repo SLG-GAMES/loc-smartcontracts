@@ -12,11 +12,11 @@ contract SLGBEP20Mintable is ERC20, Ownable {
     _mint(_msgSender(), total_);
     }
 
-    function burn(address account, uint256 amount) public onlyOwner {
+    function burn(address account, uint256 amount) external onlyOwner {
         _burn(account, amount);
     }
 
-    function mint(address account, uint256 amount) public onlyOwner {
+    function mint(address account, uint256 amount) external onlyOwner {
         _mint(account, amount);
     }
 }

@@ -22,11 +22,11 @@ contract LOCBEP721 is ERC721, Ownable {
         }
     }
 
-    function mint(address account, uint256 tokenId) public onlyOwner {
+    function mint(address account, uint256 tokenId) external onlyOwner {
         _mint(account, tokenId);
     }
 
-    function batchMint(address account, uint256[] memory tokenId) public onlyOwner {
+    function batchMint(address account, uint256[] memory tokenId) external onlyOwner {
         uint256 length = tokenId.length;
         for (uint256 i; i < length; i++) {
             _mint(account, tokenId[i]);
@@ -38,7 +38,7 @@ contract LOCBEP721 is ERC721, Ownable {
     }
 
     /// @notice Sets the base URI for constructing tokenURI values for options.
-    function setBaseOptionURI(string memory _baseOptionURI) public onlyOwner {
+    function setBaseOptionURI(string memory _baseOptionURI) external onlyOwner {
         baseURI = _baseOptionURI;
     }
 
